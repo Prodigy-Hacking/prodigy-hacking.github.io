@@ -1,0 +1,70 @@
+<html style="overflow:hidden">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:100&display=swap');
+body {
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  place-items: center;
+  font-family: 'Work Sans', sans-serif;
+}
+.statusblock {
+  background: white;
+  padding: 1rem 3rem;
+  color:black;
+border-radius: 10px
+}
+img {
+  padding: 1rem 3rem;
+  color:black;
+border-radius: 10px
+}
+
+h1 {
+  padding: 1rem 3rem;
+  color:white;
+border-radius: 10px
+}
+
+h4 {
+  background: white;
+  padding: 1rem 3rem;
+  color:black;
+border-radius: 10px
+}
+html{
+  background-image: url('https://imgur.com/8oJDmyo.png');
+}
+.key{
+   position:absolute;
+   bottom: 0;
+   left: 10;
+  }
+
+</style>
+<h1 style="font-size:100px;"><strong>ProdigyMathGameHacking</strong></h1>
+<h1 class="statusblock"><text>Status:<text> <text id="status">N/A<text></h1>
+
+<h4 class="key">Key<hr><text style="color:green">Operational</text> -<br>Hacks are up, wahoo<hr><text style="color:red">DOWN</text> -<br>Hacks are down, for whatever reason.<hr><text>N/A</text> -<br>Either the site hasn't processed the request to see if hacks are up,<br> or you've reloaded too many times, stop reloading ;((</h4>
+<script>
+function detect(){
+fetch(`https://cors-anywhere.herokuapp.com/https://prodigyhacking.ml/game.min.js`,{mode: 'cors'}).then(x => {window.status = x.status
+if(status === "200"){
+document.getElementById('status').innerText = "Operational"
+document.getElementById('status').style.color = "green"
+}else if(status === "502"){
+document.getElementById('status').innerText = "DOWN";
+document.getElementById('status').style.color = "red"
+}else{
+setTimeout(function(){
+detect()
+document.getElementById('status').innerText = "N/A";
+},1000)
+}
+})
+}
+detect()
+</script>
+
+
+
