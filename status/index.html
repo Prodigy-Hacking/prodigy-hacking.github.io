@@ -18,7 +18,8 @@
                         default:
                             setTimeout(() => {
                                 detect();
-                                document.getElementById("status").innerText = "N/A";
+                               document.getElementById("status").innerText = "DOWN";
+                            document.getElementById("status").style.color = "red";
                             }, 5 * 1000);
                             break;
                     }
