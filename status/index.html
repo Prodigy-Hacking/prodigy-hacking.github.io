@@ -5,7 +5,7 @@
 
         <script>
             function detect(){
-                fetch("https://prodigyhacking.ml/version", {mode: "cors"}).then(({status}) => {
+                fetch("https://hacks.prodigyhacking.com/version", {mode: "cors"}).then(({status}) => {
                     switch (status) {
                         case 200:
                             document.getElementById("status").innerText = "Operational";
